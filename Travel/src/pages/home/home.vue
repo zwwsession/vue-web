@@ -1,17 +1,25 @@
 <template>
   <div>
-    <div class="home">hello word</div>
+    <home-header></home-header>
+    <home-swiper></home-swiper>
+    <home-icons></home-icons>
   </div>
 </template>
 
 <script>
+import homeHeader from './components/header'
+import homeSwiper from './components/swiper'
+import homeIcons from './components/icons'
+
 export default {
-  name: 'home'
+  name: 'home',
+  components: {
+    homeSwiper,
+    homeHeader,
+    homeIcons
+  }
 }
 </script>
 
 <style scoped>
-  .home {
-    font-size: 50px;
-  }
 </style>
