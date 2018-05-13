@@ -26,6 +26,10 @@ export default {
         pagination: {
           el: '.swiper-pagination'
         },
+        autoplay: {
+          disableOnInteraction: false,
+          delay: 1000
+        },
         loop: true
       }
     }

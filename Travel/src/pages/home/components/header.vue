@@ -7,18 +7,21 @@
       <span class="iconfont">&#xe632;</span>
       输入城市景点游玩主题
     </div>
-    <div class="header-right">
-      {{city}}
-      <span class="iconfont arron-icon">&#xe60e;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{city}}
+        <span class="iconfont arron-icon">&#xe60e;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'homeHeader',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -27,7 +30,7 @@ export default {
 @import "~styles/varibles.styl"
 .header
   display: flex
-  line-height: .86 rem
+  line-height: $headerHeight
   background: $bgColor
   color: #fff
   .header-left
@@ -47,9 +50,11 @@ export default {
     height: .64rem
     color: #ccc
   .header-right
-    width: 1.24 rem
+    min-width: 1.04 rem
+    padding: 0 .1rem
     float: right
     text-align: center
+    color: #fff
     .arron-icon
       font-size: .24rem
       margin-left: -.04rem
